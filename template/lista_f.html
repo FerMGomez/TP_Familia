@@ -1,3 +1,28 @@
-{% for familia in lista_f %}
-    <h1>{{familia.nombres}}</h1>
-{% endfor %}
+
+
+    {% extends 'base.html' %}
+    {% block titulo%}
+        MI FAMILIA
+    {% endblock%}
+
+
+    {% block contenido_que_cambia  %}
+    {% for familia in lista_f %}
+    <div class="card" style="width: 18rem;">
+        <img src="https://definicion.de/wp-content/uploads/2019/06/perfildeusuario.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{familia.nombres}} {{familia.apellido}}</h5>
+            <p class="card-text">Año Nacimiento {{familia.f_nacimiento}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Edad actual:</li>
+        </ul>
+        <div class="card-body">
+            <button type="button" class="btn btn-info">Modificar</button>
+            <button type="button" class="btn btn-danger">Eliminar</button>
+        </div>
+    </div>
+    {% endfor %}
+    
+    {% endblock%}
+    

@@ -11,3 +11,6 @@ class Products(models.Model):
     email = models.EmailField(null=True, blank=True)
     creation_date = models. DateField(auto_now_add=True)
     
+    def __str__(self):
+        return self.nombres
+        

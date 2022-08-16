@@ -1,10 +1,23 @@
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
-<h4>{{familia}}</h4>
+{% extends 'base.html' %}
+
+{% block titulo%}
+    BANDAS
+{% endblock%}
+
+{% block contenido_que_cambia %}
+
+    {% for band in banda %}
+    {% if band == 'MEGADETH'%}   
+    <div class="alert alert-danger" role="alert">
+        {{band}}
+    </div>
+    {%else%}
+    <div class="alert alert-primary" role="alert">
+        {{band}}
+    </div>
+    {%endif%}
+    
+    {%endfor%}
+
+
+{% endblock%}

@@ -5,18 +5,15 @@ from datetime import datetime
 
 
 
-
-
 def saludo(response):
-    return  HttpResponse('HOHOLAHOALHOALHOALHOAL')
+    return  HttpResponse('HOLA COMO ESTAS?')
 
 def saludando(request):
     return render(request,'template.html',context={})
 
-def familia(request):
+def bandas(request):
     context ={
-        'familia':['MARCELA','MIGUEL','RICARDO','FERNANDO','ANALAURA' ],
-        
+        'banda':['MEGADETH','METALLICA','SLAYER'],       
     }
     return render(request,'bandas.html',context=context)
 
